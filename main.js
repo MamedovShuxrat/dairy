@@ -12,11 +12,13 @@ modalClose.addEventListener('click', closeModal)
 
 function openModal() {
     modalWindow.classList.remove('hide')
+    document.body.classList.add('modal-opened')
     modalSubmit.addEventListener('click', handleSubmit)
 }
 
 function closeModal() {
     modalWindow.classList.add('hide')
+    document.body.classList.remove('modal-opened')
     modalSubmit.removeEventListener('click', handleSubmit)
 }
 
@@ -78,9 +80,8 @@ function getCurrentTime() {
     const now = new Date();
     const hours = now.getHours();
     const minutes = now.getMinutes();
-    const seconds = now.getSeconds();
 
-    const timeString = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+    const timeString = `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}`;
 
     return timeString;
 }
