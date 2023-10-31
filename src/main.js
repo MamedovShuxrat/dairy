@@ -9,19 +9,19 @@ const cardsContainer = document.querySelector('.cards')
 
 headerBtn.addEventListener('click', openModal)
 modalClose.addEventListener('click', closeModal)
-//открывает модальное окно
+
 function openModal() {
     modalWindow.classList.remove('hide')
     document.body.classList.add('modal-opened')
     modalSubmit.addEventListener('click', handleSubmit)
 }
-//закрывает модальное окно
+
 function closeModal() {
     modalWindow.classList.add('hide')
     document.body.classList.remove('modal-opened')
     modalSubmit.removeEventListener('click', handleSubmit)
 }
-// проверка на кол символов
+
 function validateInpunt(title, text) {
     let maxTitleLength = 200
     let maxTextLength = 2000
@@ -36,7 +36,7 @@ function validateInpunt(title, text) {
     }
     return true
 }
-//функция создания card__item и добавляет в html dom
+
 function createEl(title, text, date, time) {
     title = modalTitle.value
     text = modalText.value
@@ -70,14 +70,13 @@ function handleSubmit(event) {
         closeModal()
     }
 }
-//очистка инпутов
+
 function clearInputs() {
     modalTitle.value = ''
     modalText.value = ''
     modalDate.value = ''
 }
 
-//функция получения реального времени
 function getCurrentTime() {
     const now = new Date();
     const hours = now.getHours();
@@ -99,23 +98,26 @@ function saveDate(title, text, date,) {
 
     fetch('posts.json')
         .then(response => response.json())
-        .then(date => {
-            if (!date.cards) {
-                date.cards = []
+        .then(data => {
+            if (!data.cards) {
+                data.cards = []
             }
 
-            date.cards.push(newItems)
+            data.cards.push(newItems)
 
-            return date
+            return data
         })
 
-    fetch('posts.json', {
-        method: 'PUT',
-        body: JSON.stringify(date),
-        headers: {
-            'Content-Type': 'application/json'
-        }
-    })
+        .then(updatedData => {
+            fetch('posts.json', {
+                method: 'PUT',
+                body: JSON.stringify(updatedData),
+                headers: {
+                    'Content-Type': 'application/json'
+                }
+            })
+
+        })
         .then(response => {
             if (response.ok) {
                 console.log('Данные успешко отправлены! на псевдо сервер ))')
@@ -128,42 +130,4 @@ function saveDate(title, text, date,) {
         })
 }
 
-// function saveData(title, text, date, time) {
-//     const newCard = {
-//         title: title,
-//         text: text,
-//         date: date,
-//         time: time
-//     };
 
-//     // Загружаем текущие данные из JSON-файла
-//     fetch('posts.json')
-//         .then(response => response.json())
-//         .then(data => {
-//             if (!data.cards) {
-//                 data.cards = [];
-//             }
-
-//             // Добавляем новую карточку в массив
-//             data.cards.push(newCard);
-
-//             // Отправляем обновленные данные обратно на сервер
-//             return fetch('posts.json', {
-//                 method: 'PUT',
-//                 body: JSON.stringify(data),
-//                 headers: {
-//                     'Content-Type': 'application/json'
-//                 }
-//             });
-//         })
-//         .then(response => {
-//             if (response.ok) {
-//                 console.log('Данные успешно отправлены на сервер.');
-//             } else {
-//                 console.error('Произошла ошибка при отправке данных на сервер.');
-//             }
-//         })
-//         .catch(error => {
-//             console.error('Произошла ошибка:', error);
-//         });
-// }

@@ -1,0 +1,26 @@
+{
+  "name": "adwin",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MamedovShuxrat/test_task_adwin.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/MamedovShuxrat/test_task_adwin/issues"
+  },
+  "homepage": "https://github.com/MamedovShuxrat/test_task_adwin#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
