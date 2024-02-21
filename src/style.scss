@@ -1,0 +1,43 @@
+@import "styles/varibales.scss";
+@import "styles/header.scss";
+@import "styles/main.scss";
+@import "styles/cards.scss";
+@import "styles/modal.scss";
+@import "styles/footer.scss";
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $primary-fonts;
+    position: relative;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.container {
+    max-width: 1920px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.btn {
+    border: none;
+    cursor: pointer;
+    text-wrap: nowrap;
+}
+
+.btn-up {
+    padding: 24px 60px;
+}
+
+
+.hide {
+    display: none;
+}
