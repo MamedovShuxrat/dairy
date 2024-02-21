@@ -21,8 +21,9 @@
     letter-spacing: 0.72px;
 }
 
-.fotter__btn {
-    padding-left: 40px;
+.footer__btn {
+    padding: 20px 40px 20px 60px;
+
     background-color: #88A1DE;
     border-radius: 40px;
     color: #050F28;
@@ -35,13 +36,7 @@
     top: -36px;
     right: 40px;
     text-decoration: none;
-}
 
-.btn-up {
-    padding: 24px 60px;
-}
-
-.fotter__btn {
     &::before {
         position: absolute;
         top: 20px;
@@ -52,5 +47,15 @@
         background-image: url('images/IconUp.svg');
         background-repeat: no-repeat;
         background-position: center center;
+    }
+}
+
+@media (max-width: 425px) {
+    .footer__btn {
+        &::before {
+            top: 17px;
+            left: 14px;
+
+        }
     }
 }

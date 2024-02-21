@@ -61,7 +61,7 @@
     }
 }
 
-@media (max-width: 425px) {
+@media (max-width: 525px) {
     .header__btn {
         font-size: 0;
         padding: 20px 18px;
@@ -70,7 +70,9 @@
         background-position: center center;
 
         &:hover {
-            background: #050F28;
+            background-image: url('images/Icon_pensil.svg');
+            background-repeat: no-repeat;
+            background-position: center center;
         }
     }
 }
