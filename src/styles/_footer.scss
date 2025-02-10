@@ -1,52 +1,53 @@
 .footer {
     background-color: #050F28;
-}
 
-.footer__wrapper {
-    padding: 25px 40px;
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-pack: justify;
-    -ms-flex-pack: justify;
-    justify-content: space-between;
-    position: relative;
-}
 
-.footer__title {
-    color: #FFF;
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 110%;
-    letter-spacing: 0.72px;
-}
+    &__wrapper {
+        padding: 25px 40px;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+        justify-content: space-between;
+        position: relative;
+    }
 
-.footer__btn {
-    padding: 20px 40px 20px 60px;
+    &__title {
+        color: #FFF;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 110%;
+        letter-spacing: 0.72px;
+    }
 
-    background-color: #88A1DE;
-    border-radius: 40px;
-    color: #050F28;
-    font-size: 18px;
-    font-weight: 700;
-    line-height: 110%;
-    letter-spacing: 0.72px;
-    text-transform: uppercase;
-    position: absolute;
-    top: -36px;
-    right: 40px;
-    text-decoration: none;
+    &__btn {
+        padding: 20px 40px 20px 60px;
 
-    &::before {
+        background-color: #88A1DE;
+        border-radius: 40px;
+        color: #050F28;
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 110%;
+        letter-spacing: 0.72px;
+        text-transform: uppercase;
         position: absolute;
-        top: 20px;
-        left: 24px;
-        content: '';
-        width: 24px;
-        height: 24px;
-        background-image: url('images/IconUp.svg');
-        background-repeat: no-repeat;
-        background-position: center center;
+        top: -36px;
+        right: 40px;
+        text-decoration: none;
+
+        &::before {
+            position: absolute;
+            top: 20px;
+            left: 24px;
+            content: '';
+            width: 24px;
+            height: 24px;
+            background-image: url('images/IconUp.svg');
+            background-repeat: no-repeat;
+            background-position: center center;
+        }
     }
 }
 
